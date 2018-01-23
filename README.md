@@ -51,3 +51,20 @@ git merge --no-ff -m "merged bug fix 101" issue-101
 
 git checkout dev
 git stash pop
+
+## tag
+git tag -a v0.5 -m "signed version 0.5 released" fec145a
+git tag -s v0.5 -m "signed version 0.5 released" fec145a
+
+git push origin v1.0
+git push origin --tags
+
+## 别名
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.unstage 'reset HEAD'
+git config --global alias.last 'log -1'
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
