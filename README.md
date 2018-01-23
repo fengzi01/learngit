@@ -10,5 +10,14 @@ git diff --cached 缓存区 <=> 本地库
 git reset HEAD file --> 可以把暂存区的修改撤销掉（unstage），重新放回工作区
 
 git checkout -b dev  --> 命令加上-b参数表示创建并切换
-
 git checkout master  --> 切换分支
+git branch --> 列出分支
+git branch -d branch_name --> 删除branch分支
+git merge dev 合并分支
+
+## branch merge操作
+git add readme.txt
+git commit -m 'modify readme'
+git checkout master
+git merge --no-ff -m "merge with no-ff" dev  (--no-ff 非快速模式，因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。)
+git branch -d dev
