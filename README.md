@@ -21,3 +21,33 @@ git commit -m 'modify readme'
 git checkout master
 git merge --no-ff -m "merge with no-ff" dev  (--no-ff 非快速模式，因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。)
 git branch -d dev
+
+## branch log
+git log 
+git show 
+git reset --hard HEAD^
+git reflog
+
+git log --graph --pretty=oneline --abbrev-commit
+
+## 远程操作
+git remote add origin(别名，根据爱好命名) git@github.com:bukas/bukas.git
+git push -u origin master --> 用户关联origin master分支与本地master分支
+
+git checkout -b branch-name origin/branch-name
+git branch --set-upstream branch-name origin/branch-name
+
+## git stash
+git stash
+
+git checkout master
+git checkout -b issue-101
+
+git add readme.md
+git commit -m "fix bug 101"
+
+git checkout master
+git merge --no-ff -m "merged bug fix 101" issue-101
+
+git checkout dev
+git stash pop
